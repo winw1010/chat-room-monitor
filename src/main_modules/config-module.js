@@ -9,7 +9,7 @@ const configLocation = fileModule.getUserDataPath('setting', 'config.json');
 // default config
 const defaultConfig = {
     user: {
-        id: 'tsm_imperialhal',
+        id: 'blusewilly_retry',
         type: 'twitch',
     },
     indexWindow: {
@@ -22,14 +22,14 @@ const defaultConfig = {
         hideButton: true,
         hideDialog: true,
         hideDialogTimeout: 30,
-        backgroundColor: '#20202050',
+        backgroundColor: '#00000034',
     },
     dialog: {
         color: '#FFFFFF',
         fontSize: '1.1',
         spacing: '1',
         radius: '0',
-        backgroundColor: '#202020A0',
+        backgroundColor: '#000000A0',
     },
     system: {
         firstTime: true,
