@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tataru Node UI</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'"> -->
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+
+        <!-- main Style -->
+        <link rel="stylesheet" href="css/main.css" />
+
+        <!-- config Style -->
+        <link rel="stylesheet" href="css/config.css" />
+    </head>
+
+    <body>
+        <!-- image button -->
+        <div id="div_upper_button">
+            <img
+                id="img_button_drag"
+                class="img_button auto_hidden"
+                title="拖曳視窗"
+                src="./img/ui/open_with_white_24dp.svg"
+            />
+
+            <span id="span_config">設定</span>
+
+            <img
+                id="img_button_close"
+                class="img_button float_right"
+                title="關閉"
+                src="./img/ui/close_white_24dp.svg"
+            />
+        </div>
+
+        <!-- page button -->
+        <div id="div_page_button" class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" name="btnradio" id="button_radio_window" autocomplete="off" checked />
+            <label class="btn btn-outline-primary" for="button_radio_window">視窗</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="button_radio_font" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="button_radio_font">文字</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="button_radio_about" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="button_radio_about">關於</label>
+        </div>
+
+        <!-- center -->
+        <div id="div_center">
+            <br />
+
+            <!-- window page -->
+            <div id="div_window" class="setting_page">
+                <div>
+                    <!-- always on top -->
+                    <input type="checkbox" value="" id="checkbox_top" />
+                    <label for="checkbox_top">顯示在最上層</label>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- always on top -->
+                    <input type="checkbox" value="" id="checkbox_focusable" />
+                    <label for="checkbox_focusable">可被選取</label>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- hide button -->
+                    <input type="checkbox" value="" id="checkbox_hide_button" />
+                    <label for="checkbox_hide_button">隱藏按鈕</label>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- hide dialog -->
+                    <input type="checkbox" value="" id="checkbox_hide_dialog" />
+                    <input type="number" id="input_hide_dialog" min="1" step="1" value="20" />
+                    <label for="checkbox_hide_dialog">秒後隱藏對話</label>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- background color -->
+                    <label for="color_background_color">背景顏色</label>
+                    (<span id="span_background_color"></span>)
+                    <br />
+                    <input type="color" id="color_background_color" />
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- background transparency -->
+                    <label for="range_background_transparency">背景透明度</label>
+                    (<span id="span_background_transparency"></span>)
+                    <input type="range" min="0" max="255" class="form-range" id="range_background_transparency" />
+                </div>
+            </div>
+
+            <!-- font page -->
+            <div id="div_font" class="setting_page" hidden>
+                <div>
+                    <!-- font size -->
+                    <label for="input_font_size">文字大小</label>
+                    <input type="number" min="0" value="1" step="0.1" id="input_font_size" />
+                    <span>rem</span>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- dialog space -->
+                    <label for="input_dialog_spacing">對話框間隔</label>
+                    <input type="number" min="0" value="1" step="0.1" id="input_dialog_spacing" />
+                    <span>rem</span>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- dialog radius -->
+                    <label for="input_dialog_radius">對話框圓角</label>
+                    <input type="number" min="0" value="0" step="0.1" id="input_dialog_radius" />
+                    <span>rem</span>
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- dialog color -->
+                    <label for="color_dialog_color">對話框顏色</label>
+                    (<span id="span_dialog_color"></span>)
+                    <br />
+                    <input type="color" id="color_dialog_color" />
+                </div>
+
+                <br />
+
+                <div>
+                    <!-- dialog transparency -->
+                    <label for="range_dialog_transparency">對話框透明度</label>
+                    (<span id="span_dialog_transparency"></span>)
+                    <input type="range" min="0" max="255" class="form-range" id="range_dialog_transparency" />
+                </div>
+            </div>
+
+            <!-- about page -->
+            <div id="div_about" class="setting_page" hidden>
+                <p>
+                    <span id="span_about">
+                        感謝您使用Tataru Helper Node，請注意本程式需與壓縮檔裡的Tataru Helper一起使用才有自動翻譯功能
+                    </span>
+                </p>
+                <hr />
+                <p>版本: ver.<span id="span_version"></span></p>
+                <p><span id="span_author">作者: 夜雪 (巴哈姆特電玩資訊站 winw1010)</span></p>
+                <hr />
+                <p><a href="#" id="a_readme">使用說明書</a></p>
+                <p><a href="#" id="a_bug_report">問題回報</a></p>
+                <hr />
+                <p><a href="#" id="a_github">GitHub原始碼</a></p>
+                <p><a href="#" id="a_bahamut">訪問作者</a></p>
+                <p><a href="#" id="a_donate">贊助作者</a></p>
+            </div>
+        </div>
+
+        <div id="div_lower_button">
+            <button id="button_save_config" class="btn btn-primary float_right">儲存變更</button>
+            <button id="button_save_default_config" class="btn btn-secondary float_right">恢復預設值</button>
+        </div>
+    </body>
+</html>

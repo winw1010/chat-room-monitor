@@ -1,0 +1,51 @@
+{
+    "name": "chat-room-monitor",
+    "version": "1.0.0",
+    "description": "chat-room-monitor",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder"
+    },
+    "repository": "",
+    "keywords": [
+        "chat-room-monitor"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^21.0.1",
+        "electron-builder": "^23.3.3",
+        "eslint": "^8.24.0"
+    },
+    "dependencies": {
+        "tmi.js": "^1.8.5",
+        "youtube-chat": "^2.1.1"
+    },
+    "build": {
+        "appId": "com.app.chat.room.monitor",
+        "productName": "Chat Room Monitor",
+        "directories": {
+            "output": "build"
+        },
+        "extraFiles": [
+            "src/json"
+        ],
+        "win": {
+            "icon": "./src/img/icon/app.ico",
+            "target": [
+                "nsis"
+            ]
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowElevation": false,
+            "packElevateHelper": false,
+            "createStartMenuShortcut": true,
+            "createDesktopShortcut": "always",
+            "allowToChangeInstallationDirectory": true
+        }
+    }
+}
